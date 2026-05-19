@@ -10,6 +10,7 @@ export default function WelcomeBar() {
             <Image
               src="/brand/bbsutsd_logo.png"
               alt="BBSU Logo"
+              sizes="(max-width: 640px) 180px, 220px"
               fill
               className="object-contain"
               priority
@@ -43,6 +44,7 @@ export default function WelcomeBar() {
             <Image
               src="/brand/jpi-logo-tp.png"
               alt="JPI Logo"
+              sizes="(max-width: 640px) 180px, 220px"
               fill
               className="object-contain"
               priority
