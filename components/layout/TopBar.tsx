@@ -1,4 +1,5 @@
 import { Phone, Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function TopBar() {
   return (
@@ -8,18 +9,18 @@ export default function TopBar() {
           Admissions Open 2025-26
         </span>
         <div className="flex items-center gap-4">
-          <a
+          <Link
             href="tel:0330-0370660"
             className="flex items-center gap-1 hover:text-gold transition-colors"
           >
             <Phone size={14} /> 0330-0370660
-          </a>
-          <a
+          </Link>
+          <Link
             href="mailto:info@jimset.edu.pk"
             className="flex items-center gap-1 hover:text-gold transition-colors"
           >
             <Mail size={14} /> info@jimset.edu.pk
-          </a>
+          </Link>
         </div>
       </div>
     </div>

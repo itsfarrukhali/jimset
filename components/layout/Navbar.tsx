@@ -2,13 +2,25 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  {
+    label: "About",
+    children: [
+      { label: "Overview", href: "/about" },
+      { label: "Vision & History", href: "/about/vision-mission" },
+      { label: "Founder", href: "/about/founder" },
+      {
+        label: "Gen. Secretary Message",
+        href: "/about/general-secretary-message",
+      },
+      { label: "In Memory", href: "/about/in-memory" },
+    ],
+  },
   {
     label: "Programs",
     children: [
@@ -40,34 +52,39 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-md" : "bg-white"
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100"
+          : "bg-white border-b border-gray-100"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
-        {/* Logo */}
+        {/* Logo – academic crest style */}
         <Link href="/" className="flex items-center gap-3 shrink-0">
-          <div className="h-12 w-12 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
-            J
+          <div className="relative h-11 w-11 bg-primary rounded-md flex items-center justify-center text-white shadow-sm">
+            <Shield size={26} strokeWidth={1.5} />
+            <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-gold rounded-full border border-white" />
           </div>
           <div className="leading-tight">
-            <p className="font-display text-primary font-bold text-lg md:text-xl">
+            <p className="font-heading text-primary font-bold text-lg md:text-xl tracking-tight">
               JIMSET
             </p>
-            <p className="text-[10px] md:text-xs text-gray-600 -mt-0.5">
-              Jinnah Institute of Management Sciences, Engineering & Technology
+            <p className="text-[10px] md:text-[11px] text-gray-500 -mt-0.5 leading-tight">
+              Jinnah Institute of Management Sciences,
+              <br />
+              Engineering & Technology
             </p>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6 font-medium text-primary-dark">
+        <nav className="hidden lg:flex items-center gap-6 font-medium text-gray-700">
           {navLinks.map((item) =>
             item.children ? (
               <div key={item.label} className="relative group">
-                <button className="flex items-center gap-1 hover:text-gold transition-colors">
-                  {item.label} <ChevronDown size={16} />
+                <button className="flex items-center gap-1 hover:text-primary transition-colors py-2">
+                  {item.label} <ChevronDown size={14} />
                 </button>
-                <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 min-w-45 py-2">
+                <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 min-w-45 py-2 z-50">
                   {item.children.map((child) => (
                     <Link
                       key={child.href}
@@ -83,7 +100,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="hover:text-gold transition-colors"
+                className="hover:text-primary transition-colors py-2"
               >
                 {item.label}
               </Link>
@@ -95,7 +112,8 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Button
             asChild
-            className="hidden sm:inline-flex bg-gold text-primary-dark font-bold hover:bg-gold/90"
+            size="sm"
+            className="hidden sm:inline-flex bg-gold text-primary-dark font-semibold hover:bg-gold/90 shadow-sm"
           >
             <Link href="/admissions/apply">Apply Now</Link>
           </Button>
@@ -103,25 +121,25 @@ export default function Navbar() {
           {/* Mobile Drawer */}
           <Sheet>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-primary-dark">
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-70 pt-12">
+            <SheetContent side="right" className="w-70 pt-12 px-6">
               <nav className="flex flex-col gap-4">
                 {navLinks.map((item) =>
                   item.children ? (
                     <details key={item.label} className="group">
-                      <summary className="flex items-center justify-between cursor-pointer text-lg font-medium text-primary-dark hover:text-gold">
+                      <summary className="flex items-center justify-between cursor-pointer text-base font-medium text-primary-dark hover:text-gold">
                         {item.label}
-                        <ChevronDown size={18} />
+                        <ChevronDown size={16} />
                       </summary>
                       <div className="ml-4 mt-2 flex flex-col gap-2">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="text-sm text-gray-700 hover:text-primary"
+                            className="text-sm text-gray-600 hover:text-primary"
                           >
                             {child.label}
                           </Link>
@@ -132,13 +150,16 @@ export default function Navbar() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="text-lg font-medium text-primary-dark hover:text-gold"
+                      className="text-base font-medium text-primary-dark hover:text-gold"
                     >
                       {item.label}
                     </Link>
                   ),
                 )}
-                <Button asChild className="bg-gold text-primary-dark mt-6">
+                <Button
+                  asChild
+                  className="bg-gold text-primary-dark font-semibold mt-4"
+                >
                   <Link href="/admissions/apply">Apply Now</Link>
                 </Button>
               </nav>
