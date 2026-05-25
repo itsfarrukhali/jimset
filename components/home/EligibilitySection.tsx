@@ -67,7 +67,7 @@ export default function EligibilitySection() {
         <div className="hidden lg:block">
           <div className="relative rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="https://picsum.photos/600/400?random=8"
+              src="/cards/elegiblity.png"
               alt="Students at JIMSET"
               className="w-full h-auto object-cover"
               width={600}

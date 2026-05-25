@@ -40,7 +40,7 @@ export default function RootLayout({
         playfairDisplayHeading.variable,
       )}
     >
-      <body className="min-h-full flex flex-col">
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
         <TopBar />
         <Navbar />
         <main>{children}</main>

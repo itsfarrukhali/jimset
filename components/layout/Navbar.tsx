@@ -119,8 +119,8 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Button
             asChild
-            size="sm"
-            className="hidden sm:inline-flex bg-gold text-primary-dark font-semibold hover:bg-gold/90 shadow-sm"
+            size="lg"
+            className="hidden sm:inline-flex bg-gold text-primary-dark font-semibold hover:bg-gold/90 shadow-sm px-5 py-2.5"
           >
             <Link href="/admissions/apply">Apply Now</Link>
           </Button>
@@ -165,7 +165,8 @@ export default function Navbar() {
                 )}
                 <Button
                   asChild
-                  className="bg-gold text-primary-dark font-semibold mt-4"
+                  size="default"
+                  className="bg-gold text-primary-dark font-semibold mt-4 "
                 >
                   <Link href="/admissions/apply">Apply Now</Link>
                 </Button>

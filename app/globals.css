@@ -100,24 +100,20 @@
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0); }       
+  100% { transform: translateX(-50%); }
 }
 
 .marquee {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 20s linear infinite;
   will-change: transform;
 }
 
 .marquee-item {
-  display: inline-block;
-  padding: 0 1rem;
+  padding-left: 100vw;  /* ← yeh add karo sirf PEHLI copy pe */
+  padding-right: 2rem;
   font-weight: 600;
   font-size: 0.875rem;
   letter-spacing: 0.02em;
