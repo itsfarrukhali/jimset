@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/layout/Navbar";
 import TopBar from "@/components/layout/TopBar";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const playfairDisplayHeading = Playfair_Display({
   subsets: ["latin"],
@@ -169,6 +171,8 @@ export default function RootLayout({
             }),
           }}
         />
+        <SpeedInsights />
+        <Analytics />
         <TopBar />
         <Navbar />
         <main>{children}</main>
