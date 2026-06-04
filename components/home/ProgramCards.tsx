@@ -29,7 +29,7 @@ const programs = [
     eligibility: "To be announced",
     href: "#",
     active: false,
-    image: "/cards/computer-bg.png", // fixed typo (was .pngs)
+    image: "/cards/computer-bg.png",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function ProgramCards() {
   return (
     <section className="py-20 md:py-28 bg-surface px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <span className="text-gold font-semibold text-sm uppercase tracking-wider">
             Academic Offerings
           </span>

@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, ChevronDown, Shield } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -65,17 +66,22 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
-        {/* Logo – academic crest style */}
         <Link href="/" className="flex items-center gap-3 shrink-0">
-          <div className="relative h-11 w-11 bg-primary rounded-md flex items-center justify-center text-white shadow-sm">
-            <Shield size={26} strokeWidth={1.5} />
-            <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-gold rounded-full border border-white" />
+          <div className="relative h-16 w-16 overflow-hidden flex items-center justify-center">
+            <Image
+              src="/brand/jimset.png"
+              alt="JIMSET Logo"
+              width={64}
+              height={64}
+              priority
+              className="h-16 w-16 object-contain"
+            />
           </div>
           <div className="leading-tight">
             <p className="font-heading text-primary font-bold text-lg md:text-xl tracking-tight">
               JIMSET
             </p>
-            <p className="text-[10px] md:text-[11px] text-gray-500 -mt-0.5 leading-tight">
+            <p className="text-[10px] md:text-[11px] text-gray-500 leading-tight">
               Jinnah Institute of Management Sciences,
               <br />
               Engineering & Technology

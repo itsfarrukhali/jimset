@@ -2,56 +2,61 @@ import Image from "next/image";
 
 export default function WelcomeBar() {
   return (
-    <section className="bg-white border-b border-gray-100 py-6 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-6 text-center md:text-left">
+    <section className="border-b border-gray-100 bg-white px-4 py-3">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
         {/* Left – BBSU logo */}
-        <div className="flex flex-col items-center md:items-start gap-1">
-          <div className="relative h-16 sm:h-20 w-45 sm:w-55">
+        <div className="flex flex-col items-center gap-1 sm:items-start">
+          <div className="relative h-12 w-40 sm:h-14 sm:w-48">
             <Image
               src="/brand/bbsutsd_logo.png"
               alt="BBSU Logo"
-              sizes="(max-width: 640px) 180px, 220px"
+              sizes="(max-width: 640px) 160px, 192px"
               fill
               className="object-contain"
               priority
             />
           </div>
-          <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+          <span className="text-[11px] uppercase tracking-wide text-gray-500">
             Affiliated with
           </span>
         </div>
 
         {/* Center – JIMSET branding */}
-        <div className="flex flex-col items-center gap-2">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-              <span className="text-primary font-bold text-lg">J</span>
-            </div>
-            <div>
-              <h2 className="font-heading text-xl font-bold text-primary-dark">
-                Welcome to JIMSET
-              </h2>
-              <p className="text-gray-500 text-sm">
-                A constituent institute of Jinnah Polytechnic Institute (JPI)
-              </p>
-            </div>
+        <div className="flex items-center gap-3">
+          <div className="relative h-12 w-12">
+            <Image
+              src="/brand/jimset.png"
+              alt="JIMSET Logo"
+              fill
+              sizes="48px"
+              className="object-contain"
+              priority
+            />
+          </div>
+          <div className="text-center sm:text-left">
+            <h2 className="font-heading text-base font-bold tracking-tight text-primary-dark sm:text-lg">
+              Welcome to JIMSET
+            </h2>
+            <p className="text-sm text-gray-500">
+              Jinnah Institute of Management Sciences, Engineering & Technology
+            </p>
           </div>
         </div>
 
         {/* Right – JPI logo */}
-        <div className="flex flex-col items-center md:items-end gap-1">
-          <div className="relative h-20 sm:h-24 w-52 sm:w-60">
+        <div className="flex flex-col items-center gap-1 sm:items-end">
+          <div className="relative h-12 w-40 sm:h-14 sm:w-48">
             <Image
               src="/brand/jpi-logo-tp.png"
               alt="JPI Logo"
-              sizes="(max-width: 640px) 180px, 220px"
+              sizes="(max-width: 640px) 160px, 192px"
               fill
               className="object-contain"
               priority
             />
           </div>
-          <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">
-            Under
+          <span className="text-[11px] uppercase tracking-wide text-gray-500">
+            Under JPI
           </span>
         </div>
       </div>

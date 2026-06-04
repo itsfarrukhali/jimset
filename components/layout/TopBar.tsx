@@ -19,7 +19,7 @@ export default function TopBar() {
             href="mailto:info@jimset.edu.pk"
             className="flex items-center gap-1 hover:text-gold transition-colors"
           >
-            <Mail size={14} /> info@jimset.edu.pk
+            <Mail size={14} /> jimset@jpi.edu.pk
           </Link>
         </div>
       </div>
