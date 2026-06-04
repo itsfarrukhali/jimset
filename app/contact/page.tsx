@@ -3,6 +3,14 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Contact JIMSET Karachi. ST-1, 5-C, Near Matric Board Office, Nazimabad, Karachi. Call: 0330-0370660 / 021-99260294.",
+  alternates: { canonical: "https://jimset.com/contact" },
+};
 
 export default function ContactPage() {
   return (

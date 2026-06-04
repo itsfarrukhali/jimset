@@ -1,6 +1,16 @@
 import PageHero from "@/components/shared/PageHero";
 import Image from "next/image";
 import { Quote } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Former Executive Director",
+  description:
+    "A Message from Former Executive Director of Jinnah Institute of Management Sciences, Engineering & Technology (JIMSET)",
+  alternates: {
+    canonical: "https://jimset.com/about/former-executive-director",
+  },
+};
 
 export default function FormerExecutiveDirector() {
   return (

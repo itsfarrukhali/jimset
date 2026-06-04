@@ -1,6 +1,16 @@
 import PageHero from "@/components/shared/PageHero";
 import Image from "next/image";
 import { Heart } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "In Loving Memory",
+  description:
+    "Remembering the departed souls who served Jinnah Polytechnic Institute and Anjuman-e-Islamia Trust with tireless devotion — Mr. Fasihuddin Ahmed, Mr. Muhammad Uzair Siddiqui, and Mr. Zahid Hussain Usmani.",
+  alternates: {
+    canonical: "https://jimset.com/about/in-memory",
+  },
+};
 
 const tributes = [
   {

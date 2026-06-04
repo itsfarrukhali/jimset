@@ -2,6 +2,14 @@ import PageHero from "@/components/shared/PageHero";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Lightbulb, Target, Award, GraduationCap } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "B.E Electrical Technology",
+  description:
+    "4-Year Evening Bachelor of Engineering Technology in Electrical at JIMSET Karachi. Open for DAE Electrical/Electronics and HSC Pre-Engineering graduates.",
+  alternates: { canonical: "https://jimset.com/programs/electrical" },
+};
 
 /* ─────── Program Overview ─────── */
 const overview = `Electrical Engineering Technology (EET) is a field that applies the principles of electrical engineering to the design, implementation, installation, manufacture, operation and maintenance of electrical systems. Unlike electrical engineering which focuses primarily on theory, EET is a professional discipline that balances application, theory, design and implementation. Students study power line analysis, power grid analysis, electrical measurement, digital logic design, power transmission and distribution, power electronics, microprocessor theory and interfacing, electrical protection, power system control, high voltage technology, industrial drives & PLC, motor design and many other disciplines. Graduates find suitable placements in K‑Electric, NTDC, PAEC, Civil Aviation Authority, Military Engineering Services (MES) and numerous private companies. The programme is accredited by the National Technologist Council (NTC) and recognised by the Higher Education Commission (HEC) of Pakistan.`;

@@ -12,6 +12,18 @@ import {
   GraduationCap,
   ShieldCheck,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About JIMSET",
+  description:
+    "Learn about JIMSET — formerly Jinnah Polytechnic Institute, now offering 4-year B.E Technology evening programs under Anjuman-e-Islamia Trust Pakistan.",
+  alternates: { canonical: "https://jimset.com/about" },
+  openGraph: {
+    title: "About JIMSET | Jinnah Institute Karachi",
+    url: "https://jimset.com/about",
+  },
+};
 
 const subPages = [
   {

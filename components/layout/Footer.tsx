@@ -96,7 +96,7 @@ export default function Footer() {
                 href="mailto:info@jimset.edu.pk"
                 className="hover:text-gold"
               >
-                info@jimset.edu.pk
+                jimset@jpikhi.edu.pk
               </Link>
             </li>
           </ul>

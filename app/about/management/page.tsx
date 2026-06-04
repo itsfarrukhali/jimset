@@ -1,6 +1,16 @@
 import PageHero from "@/components/shared/PageHero";
 import Image from "next/image";
 import { Quote } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Management of JIMSET",
+  description:
+    "The dedicated leadership guiding JIMSET & Anjuman‑e‑Islamia Trust Pakistan",
+  alternates: {
+    canonical: "https://jimset.com/about/management",
+  },
+};
 
 const leadership = [
   {

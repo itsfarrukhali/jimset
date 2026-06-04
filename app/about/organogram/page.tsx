@@ -1,5 +1,14 @@
 import PageHero from "@/components/shared/PageHero";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Organogram",
+  description: "Organisational Structure of JIMSET",
+  alternates: {
+    canonical: "https://jimset.com/about/organogram",
+  },
+};
 
 export default function OrganogramPage() {
   return (

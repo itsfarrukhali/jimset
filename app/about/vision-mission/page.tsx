@@ -1,5 +1,12 @@
 import PageHero from "@/components/shared/PageHero";
 import { Star, Award } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Vision, Mission & History",
+  description:
+    "The vision, mission, aims and history of JIMSET — spreading quality technical education since 1961 under Anjuman-e-Islamia Trust Pakistan.",
+};
 
 const timeline = [
   { year: "1961", event: "JPI established at ST‑1, Nazimabad‑5, Karachi." },

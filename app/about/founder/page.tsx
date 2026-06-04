@@ -1,6 +1,16 @@
 import PageHero from "@/components/shared/PageHero";
 import Image from "next/image";
 import { Shield, Star } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Founder",
+  description:
+    "The life and legacy of Al-Haj Moulvi Rayazuddin Ahmed Akbarabadi (T.I.), founder of Anjuman-e-Islamia Trust Pakistan and pioneer of Muslim female education.",
+  alternates: {
+    canonical: "https://jimset.com/about/founder",
+  },
+};
 
 export default function FounderPage() {
   return (

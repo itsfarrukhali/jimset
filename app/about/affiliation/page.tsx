@@ -1,6 +1,14 @@
 import PageHero from "@/components/shared/PageHero";
 import Image from "next/image";
 import { GraduationCap, Shield, CheckCircle } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Affiliation",
+  description:
+    "Affiliated with Benazir Bhutto Shaheed University of Technology and Skill Development, Khairpur Mirs",
+  alternates: { canonical: "https://jimset.com/about/affiliation" },
+};
 
 const benefits = [
   "HEC-recognised B.E. Technology degree upon graduation",

@@ -1,4 +1,12 @@
 import PageHero from "@/components/shared/PageHero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fee Structure",
+  description:
+    "Affordable fee structure with easy monthly installment option at JIMSET Karachi for B.E Technology evening programs.",
+  alternates: { canonical: "https://jimset.com/admissions/fee-structure" },
+};
 
 export default function FeeStructurePage() {
   return (

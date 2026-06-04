@@ -2,6 +2,14 @@ import PageHero from "@/components/shared/PageHero";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Settings, Target, Award, GraduationCap } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "B.E Mechanical Technology",
+  description:
+    "4-Year Evening Bachelor of Engineering Technology in Mechanical at JIMSET Karachi. Open for DAE Mechanical and HSC Pre-Engineering graduates.",
+  alternates: { canonical: "https://jimset.com/programs/mechanical" },
+};
 
 /* ─────── Program Overview ─────── */
 const overview = `The Department of Mechanical Engineering Technology offers a 4‑year Bachelor of Engineering Technology program in the field of Mechanical Engineering Technology. The program follows the Outcome‑Based Education (OBE) system to meet the criteria of the National Technology Council (NTC) as per the Sydney Accord. All tests, assignments, and semester examinations are assessed by specific Course Learning Outcomes (CLOs) related to each subject.
