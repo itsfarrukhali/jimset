@@ -1,80 +1,53 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import NewsletterForm from "@/components/forms/NewsletterForm";
+
+const quickLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Programs", href: "/programs" },
+  { label: "Admissions", href: "/admissions" },
+  { label: "Eligibility", href: "/admissions/eligibility" },
+  { label: "Fee Structure", href: "/admissions/fee-structure" },
+  { label: "News & Events", href: "/news-events" },
+  { label: "Contact", href: "/contact" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark text-white/80 pt-12 pb-6 px-4 gold-border">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* About */}
+    <footer className="gold-border bg-primary-dark px-4 pb-6 pt-12 text-white/80">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
         <div>
-          <h3 className="font-display text-xl font-bold text-white mb-4">
+          <h3 className="mb-4 font-display text-xl font-bold text-white">
             About JIMSET
           </h3>
           <p className="text-sm leading-relaxed">
             Jinnah Institute of Management Sciences, Engineering & Technology
             (JIMSET) offers 4-year evening B.E Technology programs under Jinnah
-            Polytechnic Institute (JPI), Karachi — a project of
+            Polytechnic Institute (JPI), Karachi - a project of
             Anjuman-e-Islamia Trust Pakistan.
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
-          <h3 className="font-display text-xl font-bold text-white mb-4">
+          <h3 className="mb-4 font-display text-xl font-bold text-white">
             Quick Links
           </h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/about" className="hover:text-gold transition-colors">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/programs"
-                className="hover:text-gold transition-colors"
-              >
-                Programs
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/admissions"
-                className="hover:text-gold transition-colors"
-              >
-                Admissions
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/admissions/eligibility"
-                className="hover:text-gold transition-colors"
-              >
-                Eligibility
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/admissions/fee-structure"
-                className="hover:text-gold transition-colors"
-              >
-                Fee Structure
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="hover:text-gold transition-colors"
-              >
-                Contact
-              </Link>
-            </li>
+            {quickLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="transition-colors hover:text-gold"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Contact */}
         <div>
-          <h3 className="font-display text-xl font-bold text-white mb-4">
+          <h3 className="mb-4 font-display text-xl font-bold text-white">
             Contact Info
           </h3>
           <ul className="space-y-3 text-sm">
@@ -92,18 +65,16 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Mail size={16} className="text-gold" />
-              <Link
-                href="mailto:info@jimset.edu.pk"
-                className="hover:text-gold"
-              >
-                jimset@jpikhi.edu.pk
+              <Link href="mailto:info@jimset.com" className="hover:text-gold">
+                info@jimset.com
               </Link>
             </li>
           </ul>
+          <NewsletterForm />
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-white/10 text-center text-xs text-white/50">
+      <div className="mx-auto mt-8 max-w-7xl border-t border-white/10 pt-6 text-center text-xs text-white/50">
         <p className="mb-1">A Project of Anjuman-e-Islamia Trust Pakistan</p>
         <p>© {new Date().getFullYear()} JIMSET. All rights reserved.</p>
       </div>

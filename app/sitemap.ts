@@ -86,5 +86,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
     },
     { url: `${base}/contact`, priority: 0.7, changeFrequency: "yearly" },
+    { url: `${base}/news-events`, priority: 0.8, changeFrequency: "weekly" },
   ];
 }

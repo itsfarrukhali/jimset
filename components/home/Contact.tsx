@@ -48,10 +48,10 @@ export default function Contact() {
             <div>
               <h3 className="font-bold text-primary-dark">Email</h3>
               <a
-                href="mailto:info@jimset.edu.pk"
+                href="mailto:info@jimset.com"
                 className="text-sm text-gray-600 mt-1"
               >
-                info@jimset.edu.pk
+                info@jimset.com
               </a>
             </div>
           </div>

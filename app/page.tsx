@@ -9,6 +9,7 @@ import SalientFeatures from "@/components/home/SalientFeatures";
 import CTABanner from "@/components/home/CTABanner";
 import Contact from "@/components/home/Contact";
 import NewsTicker from "@/components/home/NewsTicker";
+import NewsEventsPreview from "@/components/home/NewsEventsPreview";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <WhyJIMSET />
       <EligibilitySection />
       <SalientFeatures />
+      <NewsEventsPreview />
       <FeeHighlight />
       <CTABanner />
       <Contact />

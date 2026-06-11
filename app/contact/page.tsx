@@ -1,9 +1,7 @@
 import PageHero from "@/components/shared/PageHero";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
+import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -49,8 +47,8 @@ export default function ContactPage() {
               <Mail className="text-primary mt-1" size={24} />
               <div>
                 <h3 className="font-bold text-primary-dark">Email</h3>
-                <a href="mailto:info@jimset.edu.pk" className="text-gray-700">
-                  info@jimset.edu.pk
+                <a href="mailto:info@jimset.com" className="text-gray-700">
+                  info@jimset.com
                 </a>
               </div>
             </div>
@@ -66,58 +64,7 @@ export default function ContactPage() {
           </div>
         </div>
         <div>
-          <h2 className="font-display text-2xl font-bold text-primary-dark mb-6">
-            Send a Message
-          </h2>
-          <form className="space-y-4 bg-surface p-6 rounded-xl border">
-            <div>
-              <label
-                htmlFor="c-name"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Name
-              </label>
-              <Input
-                id="c-name"
-                placeholder="Your name"
-                className="h-10 text-2xl font-display text-primary-dark"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="c-email"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Email
-              </label>
-              <Input
-                id="c-email"
-                type="email"
-                placeholder="you@example.com"
-                className="h-10 text-2xl font-display text-primary-dark"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="c-message"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Message
-              </label>
-              <Textarea
-                id="c-message"
-                rows={4}
-                placeholder="How can we help?"
-                className="text-2xl h-full font-display text-primary-dark"
-              />
-            </div>
-            <Button
-              type="submit"
-              className="bg-primary text-sm text-white w-full h-12"
-            >
-              Send Message
-            </Button>
-          </form>
+          <ContactForm />
         </div>
       </section>
     </>

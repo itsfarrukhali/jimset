@@ -1012,10 +1012,10 @@ export default function MechanicalProgramPage() {
                 </a>{" "}
                 or email{" "}
                 <a
-                  href="mailto:info@jimset.edu.pk"
+                  href="mailto:info@jimset.com"
                   className="text-primary font-semibold"
                 >
-                  info@jimset.edu.pk
+                  info@jimset.com
                 </a>
               </p>
             </div>

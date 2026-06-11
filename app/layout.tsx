@@ -146,7 +146,7 @@ export default function RootLayout({
                 addressCountry: "PK",
               },
               telephone: "+92-330-0370660",
-              email: "jimset@jpikhi.edu.pk",
+              email: "info@jimset.com",
               foundingOrganization: "Anjuman-e-Islamia Trust Pakistan",
               hasOfferCatalog: {
                 "@type": "OfferCatalog",

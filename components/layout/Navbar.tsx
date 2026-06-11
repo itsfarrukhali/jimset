@@ -45,6 +45,7 @@ const navLinks = [
       { label: "Apply Now", href: "/admissions/apply" },
     ],
   },
+  { label: "News & Events", href: "/news-events" },
   { label: "Contact", href: "/contact" },
 ];
 

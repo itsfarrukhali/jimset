@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Admissions 2025-26",
+  title: "Admissions",
   description:
     "Admissions open at JIMSET Karachi for B.E Technology evening programs. DAE and HSC graduates with 50% marks are eligible. Apply now.",
   alternates: { canonical: "https://jimset.com/admissions" },
@@ -47,7 +47,7 @@ export default function AdmissionsPage() {
   return (
     <>
       <PageHero
-        title="Admissions 2025-26"
+        title="Admissions"
         subtitle="Your pathway to a B.E Technology degree begins here"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Admissions" }]}
       />
