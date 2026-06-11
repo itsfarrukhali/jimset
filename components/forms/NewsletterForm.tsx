@@ -2,7 +2,11 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowRight, LoaderCircle, Mail } from "lucide-react";
-import type { ApiResponse } from "@/lib/forms";
+import {
+  type ApiResponse,
+  EMAIL_PATTERN_SOURCE,
+  EMAIL_VALIDATION_MESSAGE,
+} from "@/lib/forms";
 import { Honeypot, submitForm } from "./form-helpers";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -27,7 +31,6 @@ export default function NewsletterForm() {
     <form
       onSubmit={handleSubmit}
       className="relative mt-6 rounded-xl border border-white/10 bg-white/5 p-4"
-      noValidate
     >
       <Honeypot />
       <Label
@@ -48,6 +51,8 @@ export default function NewsletterForm() {
           autoComplete="email"
           required
           maxLength={160}
+          pattern={EMAIL_PATTERN_SOURCE}
+          title={EMAIL_VALIDATION_MESSAGE}
           aria-invalid={state?.errors?.email ? "true" : undefined}
           aria-describedby="newsletter-status"
           className="h-11 min-w-0 flex-1 rounded-none border-0 bg-white px-3 text-sm text-gray-900 shadow-none focus-visible:ring-0"

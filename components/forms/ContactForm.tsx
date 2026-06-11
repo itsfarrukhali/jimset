@@ -1,12 +1,25 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { LoaderCircle, Mail, MessageSquareText, Send, User } from "lucide-react";
+import {
+  LoaderCircle,
+  Mail,
+  MessageSquareText,
+  Phone,
+  Send,
+  User,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import type { ApiResponse } from "@/lib/forms";
+import {
+  type ApiResponse,
+  EMAIL_PATTERN_SOURCE,
+  EMAIL_VALIDATION_MESSAGE,
+  PAKISTAN_MOBILE_MESSAGE,
+  PAKISTAN_MOBILE_PATTERN_SOURCE,
+} from "@/lib/forms";
 import { FieldError, FormStatus, Honeypot, submitForm } from "./form-helpers";
 
 export default function ContactForm() {
@@ -31,7 +44,6 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl shadow-primary-dark/5"
-      noValidate
     >
       <Honeypot />
       <div className="border-b bg-surface px-6 py-5">
@@ -76,10 +88,35 @@ export default function ContactForm() {
             autoComplete="email"
             required
             maxLength={160}
+            pattern={EMAIL_PATTERN_SOURCE}
+            title={EMAIL_VALIDATION_MESSAGE}
             aria-invalid={state?.errors?.email ? "true" : undefined}
             aria-describedby={state?.errors?.email ? "c-email-error" : undefined}
             className={inputClass}
             placeholder="you@example.com"
+          />
+        </ContactField>
+
+        <ContactField
+          id="c-phone"
+          label="Phone Number"
+          icon={<Phone className="size-4" />}
+          error={state?.errors?.phone}
+        >
+          <Input
+            id="c-phone"
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            required
+            maxLength={16}
+            pattern={PAKISTAN_MOBILE_PATTERN_SOURCE}
+            title={PAKISTAN_MOBILE_MESSAGE}
+            aria-invalid={state?.errors?.phone ? "true" : undefined}
+            aria-describedby={state?.errors?.phone ? "c-phone-error" : undefined}
+            className={inputClass}
+            placeholder="0346-8224143"
           />
         </ContactField>
 

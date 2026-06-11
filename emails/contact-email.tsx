@@ -9,10 +9,12 @@ import {
 export function ContactNotification({
   name,
   email,
+  phone,
   message,
 }: {
   name: string;
   email: string;
+  phone: string;
   message: string;
 }) {
   return (
@@ -22,6 +24,8 @@ export function ContactNotification({
         <Text style={emailValue}>{name}</Text>
         <Text style={emailLabel}>Email</Text>
         <Text style={emailValue}>{email}</Text>
+        <Text style={emailLabel}>Phone</Text>
+        <Text style={emailValue}>{phone}</Text>
         <Text style={emailLabel}>Message</Text>
         <Text style={emailValue}>{message}</Text>
       </Section>

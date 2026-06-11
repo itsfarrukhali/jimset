@@ -12,8 +12,20 @@ type Validator = {
   min?: number;
   max: number;
   pattern?: RegExp;
+  patternMessage?: string;
   label: string;
 };
+
+export const PAKISTAN_MOBILE_PATTERN_SOURCE =
+  "(?:\\+?92|0)3[0-9]{2}[- ]?[0-9]{7}";
+
+export const PAKISTAN_MOBILE_MESSAGE =
+  "Enter a Pakistani mobile number like 0346-8224143 or 92348-8224143.";
+
+export const EMAIL_PATTERN_SOURCE = "[^\\s@]+@[^\\s@]+\\.[^\\s@]+";
+
+export const EMAIL_VALIDATION_MESSAGE =
+  "Enter a complete email address like name@example.com.";
 
 export function readString(
   value: unknown,
@@ -33,10 +45,15 @@ export function readString(
   } else if (text.length > rules.max) {
     errors[rules.label.toLowerCase()] =
       `${rules.label} must be ${rules.max} characters or fewer.`;
-  } else if (text && rules.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) {
-    errors[rules.label.toLowerCase()] = "Enter a valid email address.";
+  } else if (
+    text &&
+    rules.email &&
+    !new RegExp(`^${EMAIL_PATTERN_SOURCE}$`).test(text)
+  ) {
+    errors[rules.label.toLowerCase()] = EMAIL_VALIDATION_MESSAGE;
   } else if (text && rules.pattern && !rules.pattern.test(text)) {
-    errors[rules.label.toLowerCase()] = `Enter a valid ${rules.label.toLowerCase()}.`;
+    errors[rules.label.toLowerCase()] =
+      rules.patternMessage ?? `Enter a valid ${rules.label.toLowerCase()}.`;
   }
 
   return text;

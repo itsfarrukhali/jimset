@@ -4,6 +4,8 @@ import {
   type FieldErrors,
   isSpam,
   jsonResponse,
+  PAKISTAN_MOBILE_MESSAGE,
+  PAKISTAN_MOBILE_PATTERN_SOURCE,
   readJson,
   readString,
 } from "@/lib/forms";
@@ -21,7 +23,13 @@ export async function POST(request: Request) {
   const errors: FieldErrors = {};
   const name = readString(payload.name, { label: "Name", required: true, min: 2, max: 80 }, errors);
   const email = readString(payload.email, { label: "Email", required: true, email: true, max: 160 }, errors);
-  const phone = readString(payload.phone, { label: "Phone", required: true, max: 24, pattern: /^[+()\d\s-]{7,24}$/ }, errors);
+  const phone = readString(payload.phone, {
+    label: "Phone",
+    required: true,
+    max: 16,
+    pattern: new RegExp(`^${PAKISTAN_MOBILE_PATTERN_SOURCE}$`),
+    patternMessage: PAKISTAN_MOBILE_MESSAGE,
+  }, errors);
   const message = readString(payload.message, { label: "Message", max: 2000 }, errors);
   const programKey = typeof payload.program === "string" ? payload.program : "";
   const program = programNames[programKey as keyof typeof programNames];

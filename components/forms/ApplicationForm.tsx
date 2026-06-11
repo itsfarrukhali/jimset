@@ -21,7 +21,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type { ApiResponse } from "@/lib/forms";
+import {
+  type ApiResponse,
+  EMAIL_PATTERN_SOURCE,
+  EMAIL_VALIDATION_MESSAGE,
+  PAKISTAN_MOBILE_MESSAGE,
+  PAKISTAN_MOBILE_PATTERN_SOURCE,
+} from "@/lib/forms";
 import { FieldError, FormStatus, Honeypot, submitForm } from "./form-helpers";
 
 export default function ApplicationForm() {
@@ -51,7 +57,6 @@ export default function ApplicationForm() {
     <form
       onSubmit={handleSubmit}
       className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl shadow-primary-dark/5"
-      noValidate
     >
       <Honeypot />
 
@@ -106,13 +111,15 @@ export default function ApplicationForm() {
               inputMode="tel"
               autoComplete="tel"
               required
-              maxLength={24}
+              maxLength={16}
+              pattern={PAKISTAN_MOBILE_PATTERN_SOURCE}
+              title={PAKISTAN_MOBILE_MESSAGE}
               aria-invalid={state?.errors?.phone ? "true" : undefined}
               aria-describedby={
                 state?.errors?.phone ? "phone-error" : undefined
               }
               className={inputClass}
-              placeholder="03XX-XXXXXXX"
+              placeholder="0346-8224143"
             />
           </FormField>
         </div>
@@ -130,6 +137,8 @@ export default function ApplicationForm() {
             autoComplete="email"
             required
             maxLength={160}
+            pattern={EMAIL_PATTERN_SOURCE}
+            title={EMAIL_VALIDATION_MESSAGE}
             aria-invalid={state?.errors?.email ? "true" : undefined}
             aria-describedby={state?.errors?.email ? "email-error" : undefined}
             className={inputClass}
