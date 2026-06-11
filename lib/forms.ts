@@ -20,7 +20,7 @@ export const PAKISTAN_MOBILE_PATTERN_SOURCE =
   "(?:\\+?92|0)3[0-9]{2}[- ]?[0-9]{7}";
 
 export const PAKISTAN_MOBILE_MESSAGE =
-  "Enter a Pakistani mobile number like 0346-8224143 or 92348-8224143.";
+  "Enter a mobile number like 0346-8224143 or 92348-8224143.";
 
 export const EMAIL_PATTERN_SOURCE = "[^\\s@]+@[^\\s@]+\\.[^\\s@]+";
 

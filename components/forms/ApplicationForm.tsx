@@ -119,7 +119,7 @@ export default function ApplicationForm() {
                 state?.errors?.phone ? "phone-error" : undefined
               }
               className={inputClass}
-              placeholder="0346-8224143"
+              placeholder="0321-12345678 or +92321-1234567"
             />
           </FormField>
         </div>

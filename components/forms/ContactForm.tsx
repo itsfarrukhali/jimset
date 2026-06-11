@@ -91,7 +91,9 @@ export default function ContactForm() {
             pattern={EMAIL_PATTERN_SOURCE}
             title={EMAIL_VALIDATION_MESSAGE}
             aria-invalid={state?.errors?.email ? "true" : undefined}
-            aria-describedby={state?.errors?.email ? "c-email-error" : undefined}
+            aria-describedby={
+              state?.errors?.email ? "c-email-error" : undefined
+            }
             className={inputClass}
             placeholder="you@example.com"
           />
@@ -114,9 +116,11 @@ export default function ContactForm() {
             pattern={PAKISTAN_MOBILE_PATTERN_SOURCE}
             title={PAKISTAN_MOBILE_MESSAGE}
             aria-invalid={state?.errors?.phone ? "true" : undefined}
-            aria-describedby={state?.errors?.phone ? "c-phone-error" : undefined}
+            aria-describedby={
+              state?.errors?.phone ? "c-phone-error" : undefined
+            }
             className={inputClass}
-            placeholder="0346-8224143"
+            placeholder="0321-12345678 or +92321-1234567"
           />
         </ContactField>
 
