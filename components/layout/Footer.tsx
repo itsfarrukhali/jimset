@@ -9,6 +9,7 @@ const quickLinks = [
   { label: "Eligibility", href: "/admissions/eligibility" },
   { label: "Fee Structure", href: "/admissions/fee-structure" },
   { label: "News & Events", href: "/news-events" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 

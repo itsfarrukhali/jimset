@@ -46,6 +46,7 @@ const navLinks = [
     ],
   },
   { label: "News & Events", href: "/news-events" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
