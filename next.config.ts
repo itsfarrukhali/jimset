@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     // allowed image qualities for next/image `quality` prop
-    qualities: [75, 85],
+    qualities: [100, 75, 85],
     remotePatterns: [
       {
         protocol: "https",
