@@ -1,6 +1,15 @@
 import PageHero from "@/components/shared/PageHero";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import { preAdmissionTestDetails } from "@/data/admissions";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Admission Process & Test",
+  description:
+    "Selection procedure, entry test pattern, pre-admission test fee (Rs 3,000), and eligibility criteria at JIMSET Karachi.",
+  alternates: { canonical: "https://jimset.com/admissions/process" },
+};
 
 export default function AdmissionProcessPage() {
   return (
@@ -60,14 +69,12 @@ export default function AdmissionProcessPage() {
               <li className="flex items-start gap-2">
                 <Check className="text-green shrink-0 mt-1" size={18} />
                 <span>
-                  50% marks in F.Sc. (Pre‑Engineering) or Equivalent
-                  Qualification (A‑level / ICS / DAE) — excluding Sports &amp;
-                  Hafiz‑e‑Quran.
+                  Minimum <strong>50% marks</strong> in F.Sc. (Pre‑Engineering / Pre-Medical) or Equivalent DAE qualification — excluding Sports &amp; Hafiz‑e‑Quran marks.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="text-green shrink-0 mt-1" size={18} />
-                <span>Qualifying the Entry Test.</span>
+                <span>Qualifying the Institute Pre-Admission Entry Test.</span>
               </li>
             </ul>
           </div>
@@ -75,13 +82,27 @@ export default function AdmissionProcessPage() {
           {/* Pre-Admission Test */}
           <div>
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary-dark mb-6">
-              3. Pre‑Admission Test
+              3. Pre‑Admission Test &amp; Fees
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-6">
               Pre‑Admission test is mandatory for all candidates applying for
               admission in Bachelor of Engineering Technology (B.E. TECH)
               Programs.
             </p>
+
+            {/* Fees Callout Box */}
+            <div className="bg-amber-50 border-2 border-gold/40 rounded-2xl p-6 mb-8 space-y-3">
+              <h3 className="font-heading font-bold text-primary-dark text-lg flex items-center gap-2">
+                <AlertCircle className="text-amber-600" size={20} />
+                Admission Form &amp; Pre-Admission Test Fees (Session 2025–2026)
+              </h3>
+              <p className="text-sm text-gray-800">
+                ❖ <strong>Pre-Admission Test Fee:</strong> {preAdmissionTestDetails.testFeeFormatted} ({preAdmissionTestDetails.testFeeText}).
+              </p>
+              <p className="text-sm text-gray-800">
+                ❖ <strong>Form Deposit Refund Policy:</strong> {preAdmissionTestDetails.formSubmissionDepositFormatted} to be deposited at the time of submission of Admission Form, and it will be fully refunded if the candidate does not clear the pre-admission test.
+              </p>
+            </div>
 
             <h3 className="font-heading text-xl font-bold text-primary-dark mt-8 mb-4">
               3.1 Aptitude Test Pattern
@@ -112,7 +133,7 @@ export default function AdmissionProcessPage() {
           <div className="text-center">
             <Link
               href="/admissions/apply"
-              className="inline-flex items-center gap-2 bg-gold text-primary-dark font-bold px-8 py-3 rounded-lg hover:bg-gold/90 transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 bg-gold text-primary-dark font-bold px-8 py-3.5 rounded-lg hover:bg-gold/90 transition-colors shadow-md text-base"
             >
               Proceed to Application Form <ArrowRight size={16} />
             </Link>

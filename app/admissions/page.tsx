@@ -1,5 +1,5 @@
 import PageHero from "@/components/shared/PageHero";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -7,7 +7,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Admissions",
   description:
-    "Admissions open at JIMSET Karachi for B.E Technology evening programs. DAE and HSC graduates with 50% marks are eligible. Apply now.",
+    "Admissions open at JIMSET Karachi for B.E Technology evening and morning programs. DAE and HSC graduates with minimum 50% marks are eligible. Apply now.",
   alternates: { canonical: "https://jimset.com/admissions" },
 };
 
@@ -15,28 +15,29 @@ const steps = [
   {
     step: 1,
     title: "Check Eligibility",
-    desc: "Review criteria for DAE / HSC graduates.",
+    desc: "Review criteria for DAE / HSC graduates (Min 50% marks).",
   },
   {
     step: 2,
     title: "Prepare Documents",
-    desc: "Gather all required certificates and photos.",
+    desc: "Gather certificates, verification fees & CNIC/B-Form.",
   },
   {
     step: 3,
     title: "Submit Application",
-    desc: "Fill the online form or visit campus.",
+    desc: "Fill the online form & deposit test fee into bank.",
   },
   {
     step: 4,
-    title: "Enroll & Start",
-    desc: "Complete fee submission and begin classes.",
+    title: "Pre-Admission Test & Start",
+    desc: "Pass the aptitude test & complete fee submission.",
   },
 ];
 
 const documents = [
   "Original + Copy of DAE / HSC Certificate",
   "Matric Certificate + Copy",
+  "HSC / DAE Marks Certificate Verification Fee (Rs. 7,000)",
   "CNIC / B-Form Copy",
   "4 Passport Size Photos",
   "Character Certificate",
@@ -73,38 +74,75 @@ export default function AdmissionsPage() {
           </div>
         </div>
 
-        {/* Eligibility */}
+        {/* Eligibility Overview */}
         <div>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-dark mb-8 text-center">
-            Eligibility Criteria
+            Eligibility Criteria (Minimum 50% Marks)
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white border rounded-xl p-6">
-              <h3 className="font-bold text-primary-dark text-lg mb-2">
-                DAE Graduates
+            <div className="bg-white border rounded-xl p-6 space-y-3">
+              <h3 className="font-bold text-primary-dark text-lg border-b pb-2">
+                B.E Tech (Electrical)
               </h3>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>Diploma of Associate Engineer in relevant technology</li>
-                <li>Minimum 50% marks</li>
-                <li>Recognized by SBTE</li>
+              <ul className="text-sm text-gray-700 space-y-1.5">
+                <li className="flex items-start gap-2">
+                  <Check className="text-green shrink-0 mt-0.5" size={16} />
+                  <span>HSC (Pre-Engineering) & Pre-Medical</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-green shrink-0 mt-0.5" size={16} />
+                  <span>
+                    10 DAE Specializations (Electrical, Electronics, Telecom, Avionics, IT, Automation, etc.)
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-green shrink-0 mt-0.5" size={16} />
+                  <span>Minimum 50% aggregate marks</span>
+                </li>
               </ul>
             </div>
-            <div className="bg-white border rounded-xl p-6">
-              <h3 className="font-bold text-primary-dark text-lg mb-2">
-                HSC Graduates
+            <div className="bg-white border rounded-xl p-6 space-y-3">
+              <h3 className="font-bold text-primary-dark text-lg border-b pb-2">
+                B.E Tech (Mechanical)
               </h3>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>HSC Pre-Engineering (or Pre-Medical)</li>
-                <li>Minimum 50% marks</li>
-                <li>All boards accepted</li>
+              <ul className="text-sm text-gray-700 space-y-1.5">
+                <li className="flex items-start gap-2">
+                  <Check className="text-green shrink-0 mt-0.5" size={16} />
+                  <span>HSC (Pre-Engineering) & Pre-Medical</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-green shrink-0 mt-0.5" size={16} />
+                  <span>
+                    7 DAE Specializations (Mechanical, Auto-Farm/Diesel, Power, Biomedical, Dies & Molding, RAC, Automation)
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-green shrink-0 mt-0.5" size={16} />
+                  <span>Minimum 50% aggregate marks</span>
+                </li>
               </ul>
             </div>
           </div>
           <div className="text-center mt-6">
-            <Button asChild variant="link" className="text-primary">
+            <Button asChild variant="link" className="text-primary font-bold">
               <Link href="/admissions/eligibility">
-                Full Eligibility Details →
+                Full Eligibility Details &amp; Disciplines →
               </Link>
+            </Button>
+          </div>
+        </div>
+
+        {/* Fee Highlight Callout */}
+        <div className="bg-gradient-to-r from-primary-dark to-slate-900 text-white rounded-2xl p-8 shadow-lg text-center max-w-4xl mx-auto space-y-4">
+          <h2 className="text-2xl md:text-3xl font-bold font-heading">
+            Fee Structure &amp; Installments
+          </h2>
+          <p className="text-gray-300 text-sm max-w-2xl mx-auto">
+            Session 2025–2026 Morning (MT) &amp; Evening (ET) fee breakdowns, plus 2ⁿᵈ semester session 2024–2025 schedules. Easy monthly installment options are available.
+          </p>
+          <div>
+            <Button asChild className="bg-gold text-primary-dark font-bold hover:bg-gold/90">
+              <Link href="/admissions/fee-structure">View Full Fee Structure</Link>
             </Button>
           </div>
         </div>
@@ -119,7 +157,7 @@ export default function AdmissionsPage() {
               {documents.map((doc, i) => (
                 <li key={i} className="flex items-start gap-2">
                   <Check className="text-green shrink-0 mt-0.5" size={18} />
-                  <span className="text-gray-700">{doc}</span>
+                  <span className="text-gray-700 text-sm">{doc}</span>
                 </li>
               ))}
             </ul>
@@ -131,9 +169,11 @@ export default function AdmissionsPage() {
           <Button
             asChild
             size="lg"
-            className="bg-gold text-primary-dark font-bold h-10 w-70 hover:text-white transition-colors"
+            className="bg-gold text-primary-dark font-bold h-12 px-8 hover:bg-gold/90 transition-colors shadow-md"
           >
-            <Link href="/admissions/apply">Proceed to Application Form</Link>
+            <Link href="/admissions/apply" className="flex items-center gap-2">
+              Proceed to Application Form <ArrowRight size={16} />
+            </Link>
           </Button>
         </div>
       </section>
