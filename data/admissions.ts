@@ -1,22 +1,3 @@
-export interface FeeItemA {
-  description: string;
-  amountMT: number;
-  amountET: number;
-  note?: string;
-}
-
-export interface FeeItemB {
-  description: string;
-  amountMT: number | null;
-  amountET: number | null;
-  note?: string;
-}
-
-export interface SecondSemFeeItem {
-  description: string;
-  amount: number;
-}
-
 export interface ProgramEligibility {
   programName: string;
   degreeCode: string;
@@ -34,106 +15,60 @@ export const preAdmissionTestDetails = {
     "Rs. 33,000/- to be deposited at the time of submission of Admission Form and it will be refunded if the pre-admission test is not cleared.",
 };
 
-export const feeStructureSectionA: FeeItemA[] = [
-  {
-    description: "Admission Fees",
-    amountMT: 15000,
-    amountET: 15000,
-  },
-  {
-    description: "Smart Identity Card Fee",
-    amountMT: 1000,
-    amountET: 1000,
-  },
-  {
-    description: "Enrollment Card Fee",
-    amountMT: 5000,
-    amountET: 5000,
-  },
-  {
-    description: "HSC / DAE Marks Certificate Verification Fee",
-    amountMT: 7000,
-    amountET: 7000,
-  },
-  {
-    description: "University Caution Money Deposit (Refundable)",
-    amountMT: 5000,
-    amountET: 5000,
-    note: "Refundable only after completion of degree course. In case of cancellation of admission at any stage, caution money will not be refundable.",
-  },
-];
+// 1st Semester Session 2025-2026 Summary
+export const feeStructureSummary2025_2026 = {
+  preAdmissionTestFee: 3000,
+  preAdmissionTestFeeFormatted: "Rs. 3,000/=",
+  admissionFeeOneTime: 33000,
+  admissionFeeOneTimeFormatted: "Rs. 33,000/=",
+  
+  // Morning Batch (MT)
+  semesterFeeMT: 60500,
+  semesterFeeMTFormatted: "Rs. 60,500/=",
+  discountMTPercent: 10,
+  discountMTAmount: 6050,
+  discountMTAmountFormatted: "Rs. 6,050/=",
+  discountedSemesterFeeMT: 54450,
+  discountedSemesterFeeMTFormatted: "Rs. 54,450/=",
+  grandTotalMT: 87450,
+  grandTotalMTFormatted: "Rs. 87,450/=",
 
-export const feeStructureSectionASubtotal = {
-  amountMT: 33000,
-  amountET: 33000,
+  // Evening Batch (ET)
+  semesterFeeET: 54500,
+  semesterFeeETFormatted: "Rs. 54,500/=",
+  discountETPercent: 10,
+  discountETAmount: 5450,
+  discountETAmountFormatted: "Rs. 5,450/=",
+  discountedSemesterFeeET: 49050,
+  discountedSemesterFeeETFormatted: "Rs. 49,050/=",
+  grandTotalET: 82050,
+  grandTotalETFormatted: "Rs. 82,050/=",
 };
 
-export const feeStructureSectionB: FeeItemB[] = [
-  {
-    description: "Tuition Fee (per semester) — Electrical (13 × Rs. 3,000)",
-    amountMT: null,
-    amountET: 39000,
-    note: "Applicable for Evening Batch (ET)",
-  },
-  {
-    description: "Tuition Fee (per semester) — Mechanical (15 × Rs. 3,000)",
-    amountMT: 45000,
-    amountET: null,
-    note: "Applicable for Morning Batch (MT)",
-  },
-  {
-    description: "Sport Charges (per semester)",
-    amountMT: 500,
-    amountET: 500,
-  },
-  {
-    description: "Development Charges (per semester)",
-    amountMT: 1500,
-    amountET: 1500,
-  },
-  {
-    description: "Library Fee (per semester)",
-    amountMT: 1500,
-    amountET: 1500,
-  },
-  {
-    description: "Medical Fee (per semester)",
-    amountMT: 500,
-    amountET: 500,
-  },
-  {
-    description: "Lab Equipment Maintenance (per semester)",
-    amountMT: 3000,
-    amountET: 3000,
-  },
-  {
-    description: "Semester Examination Fee",
-    amountMT: 8500,
-    amountET: 8500,
-  },
-];
-
-export const feeStructureSectionBSubtotal = {
-  amountMT: 60500,
-  amountET: 54500,
+// 1st Batch 2nd Semester Session 2024-2025 Summary
+export const secondSemesterSummary2024_2025 = {
+  baseFee: 47500,
+  baseFeeFormatted: "Rs. 47,500/=",
+  discountPercent: 30,
+  discountAmount: 14250,
+  discountAmountFormatted: "Rs. 14,250/=",
+  discountedFee: 33250,
+  discountedFeeFormatted: "Rs. 33,250/=",
 };
 
-export const feeStructureGrandTotal = {
-  amountMT: 93500,
-  amountET: 87500,
+// 3rd Semester (2nd Year) Summary
+export const thirdSemesterSummary2ndYear = {
+  baseFee: 47500,
+  baseFeeFormatted: "Rs. 47,500/=",
+  discountPercent: 30,
+  discountAmount: 14250,
+  discountAmountFormatted: "Rs. 14,250/=",
+  tuitionIncrementPercent: 10,
+  tuitionIncrementAmount: 3200,
+  tuitionIncrementAmountFormatted: "Rs. 3,200/=",
+  actualFeePayable: 36450,
+  actualFeePayableFormatted: "Rs. 36,450/=",
 };
-
-export const secondSemesterFeeStructure2024_2025: SecondSemFeeItem[] = [
-  { description: "Tuition Fee (per semester)", amount: 32000 },
-  { description: "Sport Charges (per semester)", amount: 500 },
-  { description: "Development Charges (per semester)", amount: 1500 },
-  { description: "Library Fee (per semester)", amount: 1500 },
-  { description: "Medical Fee (per semester)", amount: 500 },
-  { description: "Lab Equipment Maintenance (per semester)", amount: 3000 },
-  { description: "Semester Examination Fee", amount: 8500 },
-];
-
-export const secondSemesterTotalFee2024_2025 = 47500;
 
 export const programEligibilityDetails: ProgramEligibility[] = [
   {
