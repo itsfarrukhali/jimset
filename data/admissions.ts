@@ -21,28 +21,26 @@ export const feeStructureSummary2025_2026 = {
   preAdmissionTestFeeFormatted: "Rs. 3,000/=",
   admissionFeeOneTime: 33000,
   admissionFeeOneTimeFormatted: "Rs. 33,000/=",
-  
+
   // Morning Batch (MT)
   semesterFeeMT: 60500,
   semesterFeeMTFormatted: "Rs. 60,500/=",
-  discountMTPercent: 10,
-  discountMTAmount: 6050,
-  discountMTAmountFormatted: "Rs. 6,050/=",
-  discountedSemesterFeeMT: 54450,
-  discountedSemesterFeeMTFormatted: "Rs. 54,450/=",
-  grandTotalMT: 87450,
-  grandTotalMTFormatted: "Rs. 87,450/=",
+  discountMTAmount: 4500,
+  discountMTAmountFormatted: "Rs. 4,500/=",
+  discountedSemesterFeeMT: 56000,
+  discountedSemesterFeeMTFormatted: "Rs. 56,000/=",
+  grandTotalMT: 89000,
+  grandTotalMTFormatted: "Rs. 89,000/=",
 
   // Evening Batch (ET)
   semesterFeeET: 54500,
   semesterFeeETFormatted: "Rs. 54,500/=",
-  discountETPercent: 10,
-  discountETAmount: 5450,
-  discountETAmountFormatted: "Rs. 5,450/=",
-  discountedSemesterFeeET: 49050,
-  discountedSemesterFeeETFormatted: "Rs. 49,050/=",
-  grandTotalET: 82050,
-  grandTotalETFormatted: "Rs. 82,050/=",
+  discountETAmount: 3900,
+  discountETAmountFormatted: "Rs. 3,900/=",
+  discountedSemesterFeeET: 50600,
+  discountedSemesterFeeETFormatted: "Rs. 50,600/=",
+  grandTotalET: 83600,
+  grandTotalETFormatted: "Rs. 83,600/=",
 };
 
 // 1st Batch 2nd Semester Session 2024-2025 Summary
@@ -63,11 +61,13 @@ export const thirdSemesterSummary2ndYear = {
   discountPercent: 30,
   discountAmount: 14250,
   discountAmountFormatted: "Rs. 14,250/=",
+  discountedFeeAfter30Percent: 33250,
+  discountedFeeAfter30PercentFormatted: "Rs. 33,250/=",
   tuitionIncrementPercent: 10,
-  tuitionIncrementAmount: 3200,
-  tuitionIncrementAmountFormatted: "Rs. 3,200/=",
-  actualFeePayable: 36450,
-  actualFeePayableFormatted: "Rs. 36,450/=",
+  tuitionIncrementAmount: 3325,
+  tuitionIncrementAmountFormatted: "Rs. 3,325/=",
+  actualFeePayable: 36575,
+  actualFeePayableFormatted: "Rs. 36,575/=",
 };
 
 export const programEligibilityDetails: ProgramEligibility[] = [

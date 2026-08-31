@@ -73,9 +73,7 @@ export default function FeeStructurePage() {
               Fee Structure for 1ˢᵗ Semester Session 2025–2026
             </h2>
             <p className="text-gray-600 text-sm mt-1">
-              Summary of one-time admission fees, semester fees, and{" "}
-              <strong>10% semester fee discount</strong> for Morning (MT) &amp;
-              Evening (ET) batches.
+              Summary of One-time Admission Fees, and special discount for Morning (MT) &amp; Evening (ET) Batches.
             </p>
           </div>
 
@@ -96,7 +94,7 @@ export default function FeeStructurePage() {
                 <tbody className="divide-y divide-gray-100">
                   <tr className="bg-white">
                     <td className="px-6 py-4 font-medium text-gray-900">
-                      Pre-Admission Test &amp; Form Submission Fee
+                      Pre Admission Test &amp; Form Submission Fee
                     </td>
                     <td className="px-6 py-4 text-right text-gray-700">
                       {
@@ -112,7 +110,7 @@ export default function FeeStructurePage() {
 
                   <tr className="bg-surface/50">
                     <td className="px-6 py-4 font-medium text-gray-900">
-                      Admission Fees (One-Time)
+                      Admission Fee (One Time)
                     </td>
                     <td className="px-6 py-4 text-right font-semibold text-gray-900">
                       {
@@ -128,7 +126,7 @@ export default function FeeStructurePage() {
 
                   <tr className="bg-white">
                     <td className="px-6 py-4 font-medium text-gray-900">
-                      Total Semester Fee
+                      Semester Fee
                     </td>
                     <td className="px-6 py-4 text-right text-gray-700">
                       {feeStructureSummary2025_2026.semesterFeeMTFormatted}
@@ -144,7 +142,7 @@ export default function FeeStructurePage() {
                         size={16}
                         className="text-emerald-600 shrink-0"
                       />
-                      <span>Less: 10% Special Discount on Semester Fee</span>
+                      <span>Less: Special Discount on Semester Fee</span>
                     </td>
                     <td className="px-6 py-4 text-right font-semibold text-emerald-700">
                       - {feeStructureSummary2025_2026.discountMTAmountFormatted}
@@ -156,7 +154,7 @@ export default function FeeStructurePage() {
 
                   <tr className="bg-emerald-100/70 font-semibold text-emerald-950">
                     <td className="px-6 py-4">
-                      Semester Fee After 10% Discount
+                      Semester Fee after Discount
                     </td>
                     <td className="px-6 py-4 text-right text-emerald-900 font-bold">
                       {
@@ -172,8 +170,7 @@ export default function FeeStructurePage() {
 
                   <tr className="bg-slate-900 text-white font-bold border-t-2 border-slate-700">
                     <td className="px-6 py-5 text-base">
-                      Grand Total Payable at Admission (Admission + Discounted
-                      Semester)
+                      Grand Total Payable at admission (Admission + Discounted Semester)
                     </td>
                     <td className="px-6 py-5 text-right text-lg text-gold font-extrabold">
                       {feeStructureSummary2025_2026.grandTotalMTFormatted}
@@ -258,7 +255,7 @@ export default function FeeStructurePage() {
               3rd Semester (2nd Year)
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-primary-dark font-heading mt-2">
-              Fee Structure for 3rd Semester (2nd Year)
+              Fees Structure for 3rd Semester (2nd year)
             </h2>
             <p className="text-gray-600 text-sm mt-1">
               Fee details with <strong>30% Discount</strong> and{" "}
@@ -297,6 +294,17 @@ export default function FeeStructurePage() {
                     </td>
                     <td className="px-6 py-4 text-right font-semibold text-emerald-700">
                       - {thirdSemesterSummary2ndYear.discountAmountFormatted}
+                    </td>
+                  </tr>
+
+                  <tr className="bg-emerald-100/70 font-semibold text-emerald-950">
+                    <td className="px-6 py-4">
+                      Fee Payable After 30% Discount
+                    </td>
+                    <td className="px-6 py-4 text-right text-emerald-900 font-bold">
+                      {
+                        thirdSemesterSummary2ndYear.discountedFeeAfter30PercentFormatted
+                      }
                     </td>
                   </tr>
 
